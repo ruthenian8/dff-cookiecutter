@@ -3,7 +3,7 @@ SHELL = /bin/bash
 VENV_PATH = venv
 
 help:
-	@echo "Thanks for your interest in the Dialog Flow Engine!"
+	@echo "Thanks for your interest in {{cookiecutter.project_name}}!"
 	@echo
 	@echo "make lint: Run linters"
 	@echo "make test: Run basic tests (not testing most integrations)"
@@ -35,13 +35,13 @@ lint: venv
 .PHONY: lint
 
 test: venv
-	@$(VENV_PATH)/bin/python -m pytest --cov-report html --cov-report term --cov=df_engine tests/
+	@$(VENV_PATH)/bin/python -m pytest --cov-report html --cov-report term --cov={{cookiecutter.project_slug}} tests/
 .PHONY: test
 
 test_all: venv test lint
-`.PHONY: test_all
+.PHONY: test_all
 
 build_doc:
 	sphinx-build -M clean docs/source docs/build
 	sphinx-build -M html docs/source docs/build
-`.PHONY: build_doc
+.PHONY: build_doc

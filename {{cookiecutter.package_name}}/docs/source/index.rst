@@ -1,9 +1,9 @@
-.. Dialog Flow Engine documentation master file, created by
-   sphinx-quickstart on Fri Nov 12 16:09:23 2021.
+.. {{cookiecutter.project_name}} documentation master file, created by
+   sphinx-quickstart on {{cookiecutter.timestamp}}.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Dialog Flow Engine's documentation!
+Welcome to {{cookiecutter.project_name}} documentation!
 =================================================
 
 .. toctree::

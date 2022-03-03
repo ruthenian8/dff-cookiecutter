@@ -2,17 +2,8 @@ from setuptools import setup, find_packages
 import pathlib
 from setuptools.command.install import install
 
-from utils.downgrade_patch import downgrade
-
 
 LOCATION = pathlib.Path(__file__).parent.resolve()
-
-
-class Downgrade(install):
-    def run(self):
-        downgrade(pathlib.Path("."))
-        install.run(self)
-
 
 # Get the long description from the README file
 readme_file = LOCATION / "README.md"
@@ -38,19 +29,19 @@ def read_requirements():
 
 
 setup(
-    name="df_engine",
-    version="0.8.1",
+    name="{{cookiecutter.project_name}}",
+    version="{{cookiecutter.version}}",
     description=description,
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/deepmipt/dialog_flow_engine",
-    author="Denis Kuznetsov",
-    author_email="kuznetsov.den.p@gmail.com",
+    url="{{cookiecutter.url}}",
+    author="{{cookiecutter.full_name}}",
+    author_email="{{cookiecutter.email}}",
     classifiers=[  # Optional
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        "Development Status :: 5 - Production/Stable",
+        "Development Status :: 2 - Pre-Alpha",
         "Intended Audience :: Developers",
         "Topic :: Software Development :: Build Tools",
         "License :: OSI Approved :: Apache Software License",
@@ -64,7 +55,5 @@ setup(
     ],
     keywords="chatbots",  # Optional
     packages=find_packages(where="."),  # Required
-    python_requires=">=3.6, <4",
-    install_requires=["pydantic>=1.8.2"],  # Optional
-    cmdclass={"install": Downgrade},
+    python_requires=">=3.6, <4"
 )
