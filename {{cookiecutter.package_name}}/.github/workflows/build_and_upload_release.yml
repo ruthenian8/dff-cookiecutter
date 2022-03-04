@@ -27,15 +27,15 @@ jobs:
 
       - name: upload to pypi via twine
         env:
-          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+          TWINE_PASSWORD: {% raw %}${{ secrets.PYPI_TOKEN }}{% endraw %}
         run: |
           twine upload --verbose -u '__token__' dist/*
 
       - name: upload binaries into release
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
           file: dist/*
-          tag: ${{ github.ref }}
+          tag: {% raw %}${{ github.ref }}{% endraw %}
           overwrite: true
           file_glob: true
