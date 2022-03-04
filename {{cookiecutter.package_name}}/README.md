@@ -1,7 +1,7 @@
 
 # {{cookiecutter.project_name}}
 
-The Dialog Flow Engine (DFE) allows you to write conversational services. The service is written by defining a special dialog graph that describes the behavior of the dialog service. The dialog graph contains the dialog script. DFE offers a specialized language (DSL) for quickly writing dialog graphs. You can use it in such services for writing skills for Amazon Alexa and etc, chat-bots for social networks, websites call-centers and etc. 
+{{cookiecutter.project_name}} is an extension to the [Dialog Flow Engine (DFE)]() allows you to write conversational services. The service is written by defining a special dialog graph that describes the behavior of the dialog service. The dialog graph contains the dialog script. DFE offers a specialized language (DSL) for quickly writing dialog graphs. You can use it in such services for writing skills for Amazon Alexa and etc, chat-bots for social networks, websites call-centers and etc. 
 
 [![Documentation Status](https://df_engine.readthedocs.io/en/stable/?badge=stable)](https://readthedocs.org/projects/df_engine/badge/?version=stable)
 <!-- [![Coverage Status](https://coveralls.io/repos/github/deepmipt/dialog_flow_engine/badge.svg?branch=main)](https://coveralls.io/github/deepmipt/dialog_flow_engine?branch=main) -->
