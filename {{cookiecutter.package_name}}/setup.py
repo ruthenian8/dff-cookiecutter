@@ -1,6 +1,18 @@
-from setuptools import setup, find_packages
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import pip
 import pathlib
-from setuptools.command.install import install
+try: # for pip >= 10
+    from pip._internal.req import parse_requirements
+except ImportError: # for pip <= 9.0.3
+    from pip.req import parse_requirements
+
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
+from setuptools import find_packages
 
 
 LOCATION = pathlib.Path(__file__).parent.resolve()
@@ -13,19 +25,19 @@ description = [line for line in readme_lines if line and not line.startswith("#"
 long_description = "\n".join(readme_lines)
 
 
-def read_requirements():
-    """parses requirements from requirements.txt"""
-    reqs_file = LOCATION / "requirements.txt"
-    reqs = [line.strip() for line in reqs_file.open(encoding="utf8").readlines() if not line.strip().startswith("#")]
+parsed_requirements = [
+    str(item.req) for item in parse_requirements(
+        'requirements.txt',
+        session='workaround'
+    )
+]
 
-    names = []
-    links = []
-    for req in reqs:
-        if "://" in req:
-            links.append(req)
-        else:
-            names.append(req)
-    return {"install_requires": names, "dependency_links": links}
+test_requirements = [
+    str(item.req) for item in parse_requirements(
+        'requirements_test.txt',
+        session='workaround'
+    )
+]
 
 
 setup(
@@ -53,7 +65,11 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3 :: Only",
     ],
-    keywords="chatbots",  # Optional
+    keywords=["chatbots", '{{ cookiecutter.package_name }}'],  # Optional
     packages=find_packages(where="."),  # Required
-    python_requires=">=3.6, <4"
+    include_package_data=True,
+    python_requires=">=3.6, <4",
+    install_requires=requirements,
+    test_suite='tests',
+    tests_require=test_requirements
 )

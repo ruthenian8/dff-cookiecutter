@@ -17,12 +17,12 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "Dialog Flow Engine"
-copyright = "2021, Denis Kuznetsov"
-author = "Denis Kuznetsov"
+project = "{{ cookiecutter.project_name }}"
+copyright = "{{ cookiecutter.full_name }}"
+author = "{{ cookiecutter.full_name }}"
 
 # The full version, including alpha/beta/rc tags
-release = "0.1.a7"
+release = "{{ cookiecutter.version }}"
 
 
 # -- General configuration ---------------------------------------------------

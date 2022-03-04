@@ -1,10 +1,10 @@
 .. {{cookiecutter.project_name}} documentation master file, created by
-   sphinx-quickstart on {{cookiecutter.timestamp}}.
+   sphinx-quickstart on {% now 'utc', '%d %m %Y' %}.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
 Welcome to {{cookiecutter.project_name}} documentation!
-=================================================
+=======================================================
 
 .. toctree::
    :maxdepth: 2

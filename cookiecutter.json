@@ -4,10 +4,11 @@
     "__project_slug":"{{ cookiecutter.project_name|lower|replace(' ', '_').replace('-', '_') }}",
 
     "version": "0.1",
-    "__timestamp": "",
     "full_name": "Denis Kuznetsov",
     "git_username": "kudep",
     "__git_domain": "https://github.com",
     "email": "kuznetsov.den.p@gmail.com",
-    "__url": "{{cookiecutter.git_domain}}/{{cookiecutter.git_username}}/{{cookiecutter.package_name}}"
+    "__url": "{{cookiecutter.git_domain}}/{{cookiecutter.git_username}}/{{cookiecutter.package_name}}",
+
+    "_extensions": ["jinja2_time.TimeExtension"]
 }
