@@ -3,16 +3,18 @@
 
 import pip
 import pathlib
-try: # for pip >= 10
-    from pip._internal.req import parse_requirements
-except ImportError: # for pip <= 9.0.3
-    from pip.req import parse_requirements
 
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
 from setuptools import find_packages
+
+
+def parse_requirements(filename):
+    """ load requirements from a pip requirements file """
+    lines = (line.strip() for line in open(filename))
+    return [line for line in lines if line and not line.startswith("#")]
 
 
 LOCATION = pathlib.Path(__file__).parent.resolve()
@@ -25,23 +27,17 @@ description = [line for line in readme_lines if line and not line.startswith("#"
 long_description = "\n".join(readme_lines)
 
 
-parsed_requirements = [
-    str(item.req) for item in parse_requirements(
-        'requirements.txt',
-        session='workaround'
-    )
-]
+requirements = parse_requirements(
+    'requirements.txt'
+)
 
-test_requirements = [
-    str(item.req) for item in parse_requirements(
-        'requirements_test.txt',
-        session='workaround'
-    )
-]
+test_requirements = parse_requirements(
+    'requirements_test.txt'
+)
 
 
 setup(
-    name="{{cookiecutter.project_name}}",
+    name="{{cookiecutter.package_name}}",
     version="{{cookiecutter.version}}",
     description=description,
     long_description=long_description,

@@ -186,7 +186,7 @@
       same "printed page" as the copyright notice for easier
       identification within third-party archives.
 
-   Copyright 2018 Neural Systems and Deep Learning Laboratory
+   Copyright {% now 'utc', '%Y' %} Neural Systems and Deep Learning Laboratory
                   Moscow Institute of Physics and Technology
 
    Licensed under the Apache License, Version 2.0 (the "License");
