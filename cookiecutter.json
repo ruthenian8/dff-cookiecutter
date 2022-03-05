@@ -1,8 +1,9 @@
 {
     "project_name":"Base DFF Project",
-    "version": "0.1",
     "package_name": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
     "project_slug":"{{ cookiecutter.project_name|lower|replace(' ', '_')|replace('-', '_') }}",
+    "addon_type": ["db_connection", "messenger_connection", "other"],
+    "version": "0.1",
     "git_repo": "{{cookiecutter.package_name}}",
     "git_user/org_name": "kudep",
     "full_name": "Denis Kuznetsov",
