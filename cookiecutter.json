@@ -5,12 +5,12 @@
     "addon_type": ["db_connection", "messenger_connection", "other"],
     "version": "0.1",
     "git_repo": "{{cookiecutter.package_name}}",
-    "git_user/org": "kudep",
+    "git_user_or_org": "kudep",
     "full_name": "Denis Kuznetsov",
     "email": "kuznetsov.den.p@gmail.com",
 
     "_git_domain": "https://github.com",
-    "url": "{{cookiecutter._git_domain}}/{{cookiecutter.git_user/org}}/{{cookiecutter.git_repo}}",
+    "url": "{{cookiecutter._git_domain}}/{{cookiecutter.git_user_or_org}}/{{cookiecutter.git_repo}}",
     "_extensions": ["jinja2_time.TimeExtension"],
     "_copy_without_render": []
 }
