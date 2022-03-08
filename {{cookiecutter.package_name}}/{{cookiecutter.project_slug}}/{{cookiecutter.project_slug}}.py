@@ -1,5 +1,5 @@
 """Main module"""
-{% set mainclass = cookiecutter.project_slug|title %}
+{% set mainclass = cookiecutter.project_slug|replace('_', ' ')|title|replace(' ', '') %}
 from copy import copy
 
 {% if cookiecutter.addon_type == 'db_connection' %}
