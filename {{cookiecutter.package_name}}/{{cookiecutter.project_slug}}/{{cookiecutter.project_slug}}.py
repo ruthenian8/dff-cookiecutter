@@ -1,7 +1,6 @@
 """Main module"""
 {% set mainclass = cookiecutter.project_slug|replace('_', ' ')|title|replace(' ', '') %}
 from copy import copy
-
 {% if cookiecutter.addon_type == 'db_connection' %}
 from pydantic import validate_arguments
 from df_engine.core import Context, Actor
@@ -10,6 +9,7 @@ from df_engine.core.types import ActorStage
 
 class {{ mainclass }}:
     """{{ mainclass }}"""
+
     def __init__(self) -> None:
         pass
 
@@ -30,15 +30,19 @@ class {{ mainclass }}:
 {% elif cookiecutter.addon_type == 'messenger_connection' %}
 from df_engine.core import Context, Actor
 
+
 class {{ mainclass }}:
     """{{ mainclass }}"""
+
     def __init__(self) -> None:
         pass
 {% else %}
 from df_engine.core import Context, Actor
 
+
 class {{ mainclass }}:
     """{{ mainclass }}"""
+
     def __init__(self) -> None:
         pass
 {% endif %}
@@ -47,6 +51,7 @@ class {{ mainclass }}:
 def main():
     """Main module script"""
     return
+
 
 if __name__ == "__main__":
     main()
