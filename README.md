@@ -50,7 +50,7 @@ make hooks
 Assuming you use docstrings to annotate your modules and objects, you can easily build the Sphinx documentation for your module by running
 
 ```bash
-make build_docs
+make build_doc
 ```
 
 Use the command `help` to see more options:
@@ -59,6 +59,12 @@ Use the command `help` to see more options:
 make help
 ```
 
-# Contributing to the Dialog Flow Framework
+## Deployment
 
-Please refer to [CONTRIBUTING.md](https://github.com/deepmipt/dialog_flow_engine/blob/dev/CONTRIBUTING.md).
+The template includes a handful of github workflows that allow you to lint and test your code as well as to deploy your newly made package straight to [PYPI](https://pypi.org/).
+
+If you plan to use the latter feature, be sure to set the `PYPI_TOKEN` secret in your repository.
+
+# Contributing to the {{cookiecutter.project_name}}
+
+Please refer to [CONTRIBUTING.md]({{cookiecutter.url}}/blob/{{cookiecutter.default_git_branch}}/CONTRIBUTING.md).

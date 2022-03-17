@@ -5,6 +5,7 @@
     "addon_type": ["db_connection", "messenger_connection", "other"],
     "version": "0.1",
     "git_repo": "{{cookiecutter.package_name}}",
+    "default_git_branch": ["main", "master"],
     "git_username": "kudep",
     "full_name": "Denis Kuznetsov",
     "email": "kuznetsov.den.p@gmail.com",

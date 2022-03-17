@@ -1,16 +1,15 @@
 ## Introduction
-We are almost completely finished with the main functionality. Nevertheless, we will be glad to receive your pull requests and issues for adding new features if you are missing something. We know that we have weaknesses in the documentation and basic examples. 
-We will be glad if you contribute to Dialog Flow Engine. 
+We are almost completely finished with the main functionality. Nevertheless, we will be glad to receive your pull requests and issues for adding new features if you are missing something.
+We always look forward to your contributions to {{cookiecutter.project_name}}. 
 
 ## Development
 ### Enviroment
 Prepare the enviroment:
 
 ```bash
-pip install -r requirements_dev.txt
-pip install -r requirements_test.txt
-pip install -r requirements.txt
-pip install -e .
+make venv
+# optionally, you can set test-first pre-commit hooks
+make hooks
 ```
 ### Documentation
 Build documentation:

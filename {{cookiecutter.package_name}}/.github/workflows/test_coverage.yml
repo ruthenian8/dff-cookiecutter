@@ -28,4 +28,4 @@ jobs:
 
       - name: build coverage file
         run: |
-          pytest --cache-clear --cov-fail-under=100 --cov={{cookiecutter.package_name}} tests/ > pytest-coverage.txt
+          pytest --cache-clear --cov={{cookiecutter.project_slug}} tests/ > pytest-coverage.txt

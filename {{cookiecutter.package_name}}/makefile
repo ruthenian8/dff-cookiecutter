@@ -51,6 +51,7 @@ build_doc:
 
 hooks:
 	@git init .
+	@git branch -m {{cookiecutter.default_git_branch}}
 	@cp pre-commit.sh .git/hooks/pre-commit
 	@chmod +x .git/hooks/pre-commit
 .PHONY: hooks
