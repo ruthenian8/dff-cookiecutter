@@ -44,7 +44,7 @@ test_all: venv test lint
 .PHONY: test_all
 
 build_doc:
-	sphinx-apidoc -f -o docs/source/apiref {{cookiecutter.project_slug}}
+	sphinx-apidoc -e -f -o docs/source/apiref {{cookiecutter.project_slug}}
 	sphinx-build -M clean docs/source docs/build
 	sphinx-build -M html docs/source docs/build
 .PHONY: build_doc

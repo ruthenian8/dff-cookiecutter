@@ -47,7 +47,8 @@ We also provide a simple hook that prevents you from commiting unlinted code. No
 make hooks
 ```
 
-Assuming you use docstrings to annotate your modules and objects, you can easily build the Sphinx documentation for your module by running
+Assuming you use docstrings to annotate your modules and objects, you can easily build the Sphinx documentation for your module 
+by ativating the virtual environment and then running
 
 ```bash
 make build_doc
