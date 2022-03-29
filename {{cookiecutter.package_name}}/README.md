@@ -1,11 +1,11 @@
 
 # {{cookiecutter.project_name}}
 
-[{{cookiecutter.project_name}}]({{cookiecutter.url}}) is an extension to the [Dialogflow Framework](https://github.com/deepmipt/dialog_flow_engine), a minimalistic open-source engine for conversational services.
+[{{cookiecutter.project_name}}]({{cookiecutter.url}}) is an extension to the [Dialogflow Engine](https://github.com/deepmipt/dialog_flow_engine), a minimalistic open-source engine for conversational services.
 
 [{{cookiecutter.project_name}}]({{cookiecutter.url}}) allows you to ...
 
-
+<!-- uncomment one of these to add badges to your project description -->
 <!-- [![Documentation Status](https://{{cookiecutter.package_name}}.readthedocs.io/en/stable/?badge=stable)](https://readthedocs.org/projects/{{cookiecutter.package_name}}/badge/?version=stable) -->
 <!-- [![Coverage Status](https://coveralls.io/repos/github/{{cookiecutter.git_username}}/{{cookiecutter.package_name}}/badge.svg?branch={{cookiecutter.default_git_branch}})](https://coveralls.io/github/{{cookiecutter.git_username}}/{{cookiecutter.package_name}}?branch={{cookiecutter.default_git_branch}}) -->
 <!-- [![Codestyle]({{cookiecutter.url}}/workflows/codestyle/badge.svg)]({{cookiecutter.url}})
