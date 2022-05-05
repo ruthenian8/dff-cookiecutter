@@ -28,6 +28,6 @@ pip install {{cookiecutter.package_name}}
 
 To get more advanced examples, take a look at [examples]({{cookiecutter.url}}/tree/{{cookiecutter.default_git_branch}}/examples) on GitHub.
 
-# Contributing to the Dialog Flow Engine
+# Contributing to the {{cookiecutter.project_name}}
 
-Please refer to [CONTRIBUTING.md](https://github.com/deepmipt/dialog_flow_engine/blob/dev/CONTRIBUTING.md).
+Please refer to [CONTRIBUTING.md]({{cookiecutter.url}}/blob/{{cookiecutter.default_git_branch}}/CONTRIBUTING.md).

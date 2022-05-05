@@ -1,7 +1,7 @@
 
-# DFF Cookiecutter
+# DF Cookiecutter
 
-DFF-cookiecutter simplifies creating add-ons for [Dialogflow Framework](https://github.com/deepmipt/dialog_flow_engine), a minimalistic open-source bot engine.
+DF-cookiecutter simplifies creating add-ons for [Dialog Flow Framework](https://github.com/deepmipt/dialog_flow_engine), a minimalistic open-source bot engine.
 
 The package uses [cookiecutter](https://github.com/cookiecutter/cookiecutter) to generate add-on templates that include all the necessary features, like makefile commands or automatized documentation. 
 
@@ -26,7 +26,7 @@ pip install cookiecutter
 When this is done, you can create your own add-on by simply calling cookiecutter from your CL interface and filling in the required values.
 
 ```bash
-cookiecutter https://github.com/ruthenian8/dff-cookiecutter.git
+cookiecutter https://github.com/ruthenian8/df-cookiecutter.git
 ```
 
 ## Managing your workflow
@@ -69,3 +69,5 @@ If you plan to use the latter feature, be sure to set the `PYPI_TOKEN` secret in
 # Contributing to the {{cookiecutter.project_name}}
 
 Please refer to [CONTRIBUTING.md]({{cookiecutter.url}}/blob/{{cookiecutter.default_git_branch}}/CONTRIBUTING.md).
+
+
