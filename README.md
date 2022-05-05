@@ -1,5 +1,9 @@
 
-# DF Cookiecutter
+# DF Addon Template
+
+There is a template of an addon python module for [Dialog Flow Framework](https://github.com/deepmipt/dialog_flow_framework). 
+
+
 
 DF-cookiecutter simplifies creating add-ons for [Dialog Flow Framework](https://github.com/deepmipt/dialog_flow_engine), a minimalistic open-source bot engine.
 
