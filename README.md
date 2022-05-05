@@ -1,7 +1,7 @@
 
 # DF Addon Template
 
-There is a template of an addon python module for [Dialog Flow Framework](https://github.com/deepmipt/dialog_flow_framework). 
+This repository provides template for addon python modules for [Dialog Flow Framework](https://github.com/deepmipt/dialog_flow_framework). 
 
 
 
