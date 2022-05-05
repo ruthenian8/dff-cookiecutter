@@ -72,6 +72,6 @@ If you plan to use the latter feature, be sure to set the `PYPI_TOKEN` secret in
 
 # Contributing to the {{cookiecutter.project_name}}
 
-Please refer to [CONTRIBUTING.md]({{cookiecutter.url}}/blob/{{cookiecutter.default_git_branch}}/CONTRIBUTING.md).
+Please refer to [CONTRIBUTING.md](CONTRIBUTING.md).
 
 

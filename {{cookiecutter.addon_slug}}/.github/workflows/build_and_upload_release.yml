@@ -1,14 +1,13 @@
 name: build_and_upload_release
 
 on:
-  pull_request:
-  push: {% raw %}{{% endraw %} branches: {{ cookiecutter.default_git_branch }}{% raw %}}{% endraw %}
+  push:
+    tags:
+      - '*'
 
 jobs:
   build:
     name: build and upload release
-    # permit release uploads only from the repository owner
-    if: github.repository == '{{ cookiecutter.git_username }}/{{ cookiecutter.git_repo }}'
     runs-on: ubuntu-latest
 
     steps:

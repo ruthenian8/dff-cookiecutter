@@ -17,10 +17,15 @@ help:
 	@echo
 
 venv:
-	python3 -m venv $(VENV_PATH)
-	$(VENV_PATH)/bin/pip install -e .
-	$(VENV_PATH)/bin/pip install -r requirements_dev.txt
-	$(VENV_PATH)/bin/pip install -r requirements_test.txt
+	@if [ "`which python`" != "venv/bin/python" ] ; 	then \
+		echo "create"
+		python3 -m venv $(VENV_PATH);\
+	fi
+
+	$(VENV_PATH)/bin/pip install -e . ;\
+	$(VENV_PATH)/bin/pip install -r requirements_dev.txt ;\
+	$(VENV_PATH)/bin/pip install -r requirements_test.txt ;\
+	
 
 format: venv
 	@$(VENV_PATH)/bin/python -m black --exclude="setup\.py" --line-length=120 .
@@ -46,21 +51,17 @@ test: venv
 test_all: venv test lint
 .PHONY: test_all
 
-venv_activation_check:
-if [ "`which python`" != "venv/bin/python" ]; then exit 1; fi 
 .PHONY: venv_activation_check
 
 build_doc:
-	make venv_activation_check
+	if [ "`which python`" != "venv/bin/python" ]; then exit 1; fi 
 	sphinx-apidoc -e -f -o docs/source/apiref {{cookiecutter.project_slug}}
 	sphinx-build -M clean docs/source docs/build
 	sphinx-build -M html docs/source docs/build
 .PHONY: build_doc
 
 hooks:
-	@git init .
-	-@git branch -m {{cookiecutter.default_git_branch}}
-	@cp pre-commit.sh .git/hooks/pre-commit
+	@echo -e "#!/bin/sh\n\nmake check" > .git/hooks/pre-commit
 	@chmod +x .git/hooks/pre-commit
 .PHONY: hooks
 

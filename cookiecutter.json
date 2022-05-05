@@ -1,17 +1,13 @@
 {
-    "project_name":"Base DFF Project",
-    "package_name": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
-    "project_slug":"{{ cookiecutter.project_name|lower|replace(' ', '_')|replace('-', '_') }}",
-    "addon_type": ["db_connection", "messenger_connection", "other"],
-    "version": "0.1",
-    "git_repo": "{{cookiecutter.package_name}}",
+    "addon_name":"My Addon",
+    "addon_slug":"dialog_flow_{{ cookiecutter.addon_name|lower|replace(' ', '_')|replace('-', '_') }}",
+    "package_name": "Dialog Flow {{ cookiecutter.addon_name }}",
+    "package_slug":"df_{{ cookiecutter.addon_name|lower|replace(' ', '_')|replace('-', '_') }}",
+    "version": "0.0.1",
     "default_git_branch": ["main", "master"],
-    "git_username": "kudep",
-    "full_name": "Denis Kuznetsov",
-    "email": "kuznetsov.den.p@gmail.com",
-
-    "_git_domain": "https://github.com",
-    "url": "{{cookiecutter._git_domain}}/{{cookiecutter.git_username}}/{{cookiecutter.git_repo}}",
+    "author": "John Doe",
+    "email": "{{ cookiecutter.author|lower|replace(' ', '.') }}@email.com",
+    "git_repository_url": "https://github.com/{{ cookiecutter.author|lower|replace(' ', '') }}/{{cookiecutter.addon_slug}}",
     "_extensions": ["jinja2_time.TimeExtension"],
     "_copy_without_render": []
 }
