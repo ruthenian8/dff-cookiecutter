@@ -4,7 +4,6 @@
     "package_name": "Dialog Flow {{ cookiecutter.addon_name }}",
     "package_slug":"df_{{ cookiecutter.addon_name|lower|replace(' ', '_')|replace('-', '_') }}",
     "version": "0.0.1",
-    "default_git_branch": ["main", "master"],
     "author": "John Doe",
     "email": "{{ cookiecutter.author|lower|replace(' ', '.') }}@email.com",
     "git_repository_url": "https://github.com/{{ cookiecutter.author|lower|replace(' ', '') }}/{{cookiecutter.addon_slug}}",

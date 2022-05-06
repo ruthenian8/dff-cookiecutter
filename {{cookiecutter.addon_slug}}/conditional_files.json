@@ -1,0 +1,8 @@
+{
+    "Git Hub Actions": {
+        "enabled": "{{'github' in cookiecutter.git_repository_url}}",
+        "resources": [
+            "{{cookiecutter.addon_slug}}/web/gql"
+        ]
+    }
+}

@@ -38,8 +38,8 @@ setup(
     description=description,
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="{{cookiecutter.url}}",
-    author="{{cookiecutter.full_name}}",
+    url="{{cookiecutter.git_repository_url}}",
+    author="{{cookiecutter.author}}",
     author_email="{{cookiecutter.email}}",
     classifiers=[  # Optional
         #   3 - Alpha

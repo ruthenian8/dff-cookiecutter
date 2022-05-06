@@ -12,14 +12,15 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../..'))
+
+sys.path.insert(0, os.path.abspath("../.."))
 
 
 # -- Project information -----------------------------------------------------
 
-project = "{{ cookiecutter.project_name }}"
-copyright = "{{ cookiecutter.full_name }}"
-author = "{{ cookiecutter.full_name }}"
+project = "{{ cookiecutter.package_name }}"
+copyright = "{{ cookiecutter.author }}"
+author = "{{ cookiecutter.author }}"
 
 # The full version, including alpha/beta/rc tags
 release = "{{ cookiecutter.version }}"

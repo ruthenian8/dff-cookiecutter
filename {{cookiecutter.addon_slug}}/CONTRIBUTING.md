@@ -1,6 +1,6 @@
 ## Introduction
 We are almost completely finished with the main functionality. Nevertheless, we will be glad to receive your pull requests and issues for adding new features if you are missing something.
-We always look forward to your contributions to {{cookiecutter.project_name}}. 
+We always look forward to your contributions to {{cookiecutter.package_name}}. 
 
 ## Development
 ### Enviroment

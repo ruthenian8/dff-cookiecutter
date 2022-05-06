@@ -3,7 +3,7 @@ SHELL = /bin/bash
 VENV_PATH = venv
 
 help:
-	@echo "Thanks for your interest in {{cookiecutter.project_name}}!"
+	@echo "Thanks for your interest in Dialog Flow My Addon!"
 	@echo
 	@echo "make lint: Run linters"
 	@echo "make test: Run basic tests (not testing most integrations)"
@@ -18,24 +18,21 @@ help:
 
 venv:
 	@if [ "`which python`" != "venv/bin/python" ] ; 	then \
-		echo "create"
+		echo "Start creating virtual environment";\
 		python3 -m venv $(VENV_PATH);\
 	fi
 
-	$(VENV_PATH)/bin/pip install -e . ;\
-	$(VENV_PATH)/bin/pip install -r requirements_dev.txt ;\
-	$(VENV_PATH)/bin/pip install -r requirements_test.txt ;\
+	$(VENV_PATH)/bin/pip install -e . ;
+	$(VENV_PATH)/bin/pip install -r requirements_dev.txt ;
+	$(VENV_PATH)/bin/pip install -r requirements_test.txt ;
 	
 
 format: venv
 	@$(VENV_PATH)/bin/python -m black --exclude="setup\.py" --line-length=120 .
 .PHONY: format
 
-check: lint test
-.PHONY: check
-
 lint: venv
-	$(VENV_PATH)/bin/python -m flake8 --config=setup.cfg {{cookiecutter.project_slug}}/
+	$(VENV_PATH)/bin/python -m flake8 --config=setup.cfg df_my_addon/
 	@set -e && $(VENV_PATH)/bin/python -m black --exclude="setup\.py" --line-length=120 --check . || ( \
 		echo "================================"; \
 		echo "Bad formatting? Run: make format"; \
@@ -45,34 +42,32 @@ lint: venv
 .PHONY: lint
 
 test: venv
-	@$(VENV_PATH)/bin/python -m pytest --cov-report html --cov-report term --cov={{cookiecutter.project_slug}} tests/
+	@$(VENV_PATH)/bin/python -m pytest --cov-report html --cov-report term --cov=df_my_addon tests/
 .PHONY: test
 
 test_all: venv test lint
 .PHONY: test_all
 
-.PHONY: venv_activation_check
-
 build_doc:
 	if [ "`which python`" != "venv/bin/python" ]; then exit 1; fi 
-	sphinx-apidoc -e -f -o docs/source/apiref {{cookiecutter.project_slug}}
+	sphinx-apidoc -e -f -o docs/source/apiref df_my_addon
 	sphinx-build -M clean docs/source docs/build
 	sphinx-build -M html docs/source docs/build
 .PHONY: build_doc
 
-hooks:
-	@echo -e "#!/bin/sh\n\nmake check" > .git/hooks/pre-commit
+hooks: venv
+	@echo -e "#!/bin/sh\n\nmake test_all" > .git/hooks/pre-commit
 	@chmod +x .git/hooks/pre-commit
 .PHONY: hooks
 
-bump_version_patch:
+bump_version_patch: venv
 	@$(VENV_PATH)/bin/python -m bump2version patch
 .PHONY: bump_version_patch
 
-bump_version_minor:
+bump_version_minor: venv
 	@$(VENV_PATH)/bin/python -m bump2version minor
 .PHONY: bump_version_minor
 
-bump_version_major:
-	$(VENV_PATH)/bin/python -m bump2version major
+bump_version_major: venv
+	@$(VENV_PATH)/bin/python -m bump2version major
 .PHONY: bump_version_major

@@ -1,5 +1,5 @@
 
-# DF Addon Template
+# Dialog Flow Addon Template
 
 This repository provides template for addon python modules for [Dialog Flow Framework](https://github.com/deepmipt/dialog_flow_framework). 
 
@@ -70,7 +70,7 @@ The template includes a handful of github workflows that allow you to lint and t
 
 If you plan to use the latter feature, be sure to set the `PYPI_TOKEN` secret in your repository.
 
-# Contributing to the {{cookiecutter.project_name}}
+# Contributing to the Dialog Flow Addon Template
 
 Please refer to [CONTRIBUTING.md](CONTRIBUTING.md).
 
