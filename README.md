@@ -1,7 +1,7 @@
 
 # Dialog Flow Addon Template
 
-**Dialog Flow Addon Template** provides template for add-on python modules for [Dialog Flow Framework](https://github.com/deepmipt/dialog_flow_framework), a minimalistic open-source bot engine.
+**Dialog Flow Addon Template** provides template for add-on python modules for [Dialog Flow Framework](https://github.com/deepmipt/dialog_flow_framework), a free and open-source software stack for creating chatbots, released under the terms of Apache License 2.0.
 
 
 Use [cookiecutter](https://github.com/cookiecutter/cookiecutter) to generate add-on repository from the template that include all the necessary features, like makefile commands, test, github actions and automatized documentation. 
@@ -12,7 +12,7 @@ The derived packages are shipped with [Apache-2.0](LICENSE) license by default.
 
 We suggest using a linux-based platform for addon development. While the template can be cloned on any device that can run python and cookiecutter, the makefile functionality will not be available for Windows.
 
-# Usage
+# Getting started
 
 ## Setting up a project
 
@@ -27,7 +27,7 @@ When this is done, you can create your own add-on by simply calling `cookiecutte
 ```bash
 cookiecutter https://github.com/deepmipt/dialog_flow_addon_template.git
 ```
-An example of filling:
+An example of template filling:
 ```bash
 addon_name [My Addon]: My first addon
 addon_slug [dialog_flow_my_first_addon]: 
@@ -42,10 +42,10 @@ git_repository_url [https://github.com/john/dialog_flow_my_first_addon]:
 
 
 ## Workflow for you add-on
-To start add-on developing your you can find more advices in [Add-on CONTRIBUTING.md]({{cookiecutter.addon_slug}}/CONTRIBUTING.md) of the add-on template.
+To start add-on developing you can find more advices in [Add-on CONTRIBUTING.md]({{cookiecutter.addon_slug}}/CONTRIBUTING.md) from the add-on template directory.
 
 # Contributing to the Dialog Flow Addon Template
 
-Please refer to [CONTRIBUTING.md](CONTRIBUTING.md).
+Please refer to same [CONTRIBUTING.md]({{cookiecutter.addon_slug}}/CONTRIBUTING.md) from the add-on template directory.
 
 
