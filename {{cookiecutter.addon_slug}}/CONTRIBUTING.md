@@ -3,15 +3,20 @@ We will be glad to receive your pull requests and issues for adding new features
 We always look forward to your contributions to the {{cookiecutter.package_name}}. 
 
 ## Managing your workflow
+We use `make` as handy automation tool.
+### Platforms
 
-After Cookiecutter creates the template for you, you can use a few make commands to get your development environment up and running.
+We suggest using a linux-based platform for addon development. While the template can be cloned on any device that can run python and cookiecutter, the makefile functionality will not be available for Windows.
 
 ### Virtual Environment
 The most essential part is setting up the virtual environment. The command also installs all the development dependencies.
 
 ```bash
 make venv
-# Do not forget to activate the environment, if you aim to install any other dependencies.
+```
+
+Do not forget to activate the environment, if you aim to install any other dependencies.
+```bash
 source venv/bin/activate
 ```
 
