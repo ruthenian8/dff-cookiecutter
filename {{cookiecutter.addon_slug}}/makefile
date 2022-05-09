@@ -13,9 +13,9 @@ help:
 	@echo "make format: Run code formatters (destructive)"
 	@echo "make build_doc: Build Sphinx docs; activate your virtual environment before execution"
 	@echo "make pre_commit: Register a git hook to lint the code on each commit"
-	@echo "make bump_version_major: increment version major in metadata files 0.0.1 -> 1.0.0"
-	@echo "make bump_version_minor: increment version minor in metadata files 0.1.1 -> 0.2.0"
-	@echo "make bump_version_patch: increment patch number in metadata files 0.0.1 -> 0.0.2"
+	@echo "make version_major: increment version major in metadata files 8.8.1 -> 9.0.0"
+	@echo "make version_minor: increment version minor in metadata files 9.1.1 -> 9.2.0"
+	@echo "make version_patch: increment patch number in metadata files 9.9.1 -> 9.9.2"
 	@echo
 
 venv:
@@ -62,14 +62,14 @@ pre_commit: venv
 	echo -e "#!/bin/sh\n\nmake test_all" > .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
 .PHONY: pre_commit
 
-bump_version_patch: venv
+version_patch: venv
 	bump2version --current-version $(CURRENT_VERSION) patch $(VERSIONING_FILES)
-.PHONY: bump_version_patch
+.PHONY: version_patch
 
-bump_version_minor: venv
+version_minor: venv
 	bump2version --current-version $(CURRENT_VERSION) minor $(VERSIONING_FILES)
-.PHONY: bump_version_minor
+.PHONY: version_minor
 
-bump_version_major: venv
+version_major: venv
 	bump2version --current-version $(CURRENT_VERSION) major $(VERSIONING_FILES)
-.PHONY: bump_version_major
+.PHONY: version_major
