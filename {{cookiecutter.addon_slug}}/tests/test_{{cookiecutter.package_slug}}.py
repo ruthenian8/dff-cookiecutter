@@ -1,8 +1,5 @@
-import sys
-
-import pytest
+from {{cookiecutter.package_slug}} import __version__
 
 
-def test_main():
-    # TODO: add tests
-    pass
+def test_version():
+    assert __version__ == "{{cookiecutter.version}}"
