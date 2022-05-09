@@ -1,7 +1,8 @@
 
 # {{cookiecutter.package_name}}
 
-[{{cookiecutter.package_name}}](../..) is an addon for the [Dialog Flow Engine](https://github.com/deepmipt/dialog_flow_engine), a minimalistic open-source engine for conversational services.
+**{{cookiecutter.package_name}}** is python module add-on for [Dialog Flow Framework](https://github.com/deepmipt/dialog_flow_framework), a free and open-source software stack for creating chatbots, released under the terms of Apache License 2.0.
+
 
 [{{cookiecutter.package_name}}](../..) allows you to ...
 {%- if 'github' in cookiecutter.git_repository_url %}
