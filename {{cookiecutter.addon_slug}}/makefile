@@ -13,8 +13,8 @@ help:
 	@echo "make format: Run code formatters (destructive)"
 	@echo "make build_doc: Build Sphinx docs; activate your virtual environment before execution"
 	@echo "make pre_commit: Register a git hook to lint the code on each commit"
-	@echo "make bump_version_major: increment version major in metadata files 0.0.1 -> 1.0.1"
-	@echo "make bump_version_minor: increment version minor in metadata files 0.1.1 -> 0.2.1"
+	@echo "make bump_version_major: increment version major in metadata files 0.0.1 -> 1.0.0"
+	@echo "make bump_version_minor: increment version minor in metadata files 0.1.1 -> 0.2.0"
 	@echo "make bump_version_patch: increment patch number in metadata files 0.0.1 -> 0.0.2"
 	@echo
 
