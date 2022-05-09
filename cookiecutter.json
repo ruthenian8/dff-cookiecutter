@@ -3,7 +3,7 @@
     "addon_slug":"dialog_flow_{{ cookiecutter.addon_name|lower|replace(' ', '_')|replace('-', '_') }}",
     "package_name": "Dialog Flow {{ cookiecutter.addon_name }}",
     "package_slug":"df_{{ cookiecutter.addon_name|lower|replace(' ', '_')|replace('-', '_') }}",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "author": "John Doe",
     "email": "{{ cookiecutter.author|lower|replace(' ', '.') }}@email.com",
     "git_repository_url": "https://github.com/{{ cookiecutter.author|lower|replace(' ', '') }}/{{cookiecutter.addon_slug}}",

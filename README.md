@@ -33,7 +33,7 @@ addon_name [My Addon]: My first addon
 addon_slug [dialog_flow_my_first_addon]: 
 package_name [Dialog Flow My first addon]: Dialog Flow My First Addon
 package_slug [df_my_first_addon]: 
-version [0.0.1]: 
+version [0.1.0]: 
 author [John Doe]: John
 email [john@email.com]: john@gmail.com
 git_repository_url [https://github.com/john/dialog_flow_my_first_addon]: 
