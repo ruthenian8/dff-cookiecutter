@@ -10,7 +10,7 @@ help:
 	@echo "make test-all: Run ALL tests (slow, closest to CI)"
 	@echo "make format: Run code formatters (destructive)"
 	@echo "make build_doc: Build Sphinx docs; activate your virtual environment before execution"
-	@echo "make hooks: Register a git hook to lint the code on each commit"
+	@echo "make pre_commit: Register a git hook to lint the code on each commit"
 	@echo "make bump_version_major: increment version major in metadata files 0.0.1 -> 1.0.1"
 	@echo "make bump_version_minor: increment version minor in metadata files 0.1.1 -> 0.2.1"
 	@echo "make bump_version_patch: increment patch number in metadata files 0.0.1 -> 0.0.2"
@@ -55,10 +55,10 @@ build_doc:
 	sphinx-build -M html docs/source docs/build
 .PHONY: build_doc
 
-hooks: venv
+pre_commit: venv
 	@echo -e "#!/bin/sh\n\nmake test_all" > .git/hooks/pre-commit
 	@chmod +x .git/hooks/pre-commit
-.PHONY: hooks
+.PHONY: pre_commit
 
 bump_version_patch: venv
 	@$(VENV_PATH)/bin/python -m bump2version patch

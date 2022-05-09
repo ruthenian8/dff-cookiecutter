@@ -24,7 +24,7 @@ source venv/bin/activate
 We also provide a simple hook that prevents you from commiting unlinted code. Note that this action will reinitialize the git repository inside the project directory, if you have already created one. To use it, run
 
 ```bash
-make hooks
+make pre_commit
 ```
 
 ### Documentation
