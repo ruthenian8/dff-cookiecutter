@@ -21,7 +21,7 @@
 # Quick Start
 ## Installation
 ```bash
-pip install {{cookiecutter.package_name}}
+pip install {{cookiecutter.package_slug}}
 ```
 
 ## Basic example
