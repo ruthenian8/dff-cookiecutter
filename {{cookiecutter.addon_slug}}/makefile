@@ -30,46 +30,45 @@ venv:
 	
 
 format: venv
-	$(VENV_PATH)/bin/python -m black --exclude="setup\.py" --line-length=120 .
+	$(VENV_PATH)/bin/black --exclude="setup\.py" --line-length=120 .
 .PHONY: format
 
 lint: venv
-	$(VENV_PATH)/bin/python -m flake8 --config=setup.cfg {{cookiecutter.addon_slug}}/
-	@set -e && $(VENV_PATH)/bin/python -m black --exclude="setup\.py" --line-length=120 --check . || ( \
+	$(VENV_PATH)/bin/flake8 --max-line-length 120 {{cookiecutter.addon_slug}}/
+	@set -e && $(VENV_PATH)/bin/black --exclude="setup\.py" --line-length=120 --check . || ( \
 		echo "================================"; \
 		echo "Bad formatting? Run: make format"; \
 		echo "================================"; \
 		false)
-	$(VENV_PATH)/bin/python -m mypy --config=setup.cfg {{cookiecutter.addon_slug}}/
+	$(VENV_PATH)/bin/mypy {{cookiecutter.addon_slug}}/
 
 .PHONY: lint
 
 test: venv
-	$(VENV_PATH)/bin/python -m pytest --cov-report html --cov-report term --cov={{cookiecutter.addon_slug}} tests/
+	$(VENV_PATH)/bin/pytest --cov-report html --cov-report term --cov={{cookiecutter.addon_slug}} tests/
 .PHONY: test
 
 test_all: venv test lint
 .PHONY: test_all
 
-build_doc:
-	if [ "`which python`" != "venv/bin/python" ]; then exit 1; fi 
-	sphinx-apidoc -e -f -o docs/source/apiref {{cookiecutter.addon_slug}}
-	sphinx-build -M clean docs/source docs/build
-	sphinx-build -M html docs/source docs/build
-.PHONY: build_doc
+doc: venv
+	$(VENV_PATH)/bin/sphinx-apidoc -e -f -o docs/source/apiref {{cookiecutter.addon_slug}}
+	$(VENV_PATH)/bin/sphinx-build -M clean docs/source docs/build
+	$(VENV_PATH)/bin/sphinx-build -M html docs/source docs/build
+.PHONY: doc
 
 pre_commit: venv
 	echo -e "#!/bin/sh\n\nmake test_all" > .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
 .PHONY: pre_commit
 
 version_patch: venv
-	bump2version --current-version $(CURRENT_VERSION) patch $(VERSIONING_FILES)
+	$(VENV_PATH)/bin/bump2version --current-version $(CURRENT_VERSION) patch $(VERSIONING_FILES)
 .PHONY: version_patch
 
 version_minor: venv
-	bump2version --current-version $(CURRENT_VERSION) minor $(VERSIONING_FILES)
+	$(VENV_PATH)/bin/bump2version --current-version $(CURRENT_VERSION) minor $(VERSIONING_FILES)
 .PHONY: version_minor
 
 version_major: venv
-	bump2version --current-version $(CURRENT_VERSION) major $(VERSIONING_FILES)
+	$(VENV_PATH)/bin/bump2version --current-version $(CURRENT_VERSION) major $(VERSIONING_FILES)
 .PHONY: version_major
