@@ -11,13 +11,14 @@ except ImportError:
 from setuptools import find_packages
 
 
+LOCATION = pathlib.Path(__file__).parent.resolve()
+
+
 def parse_requirements(filename):
     """load requirements from a pip requirements file"""
-    lines = (line.strip() for line in open(filename))
+    lines = (line.strip() for line in (LOCATION / filename).open())
     return [line for line in lines if line and not line.startswith("#")]
 
-
-LOCATION = pathlib.Path(__file__).parent.resolve()
 
 # Get the long description from the README file
 readme_file = LOCATION / "README.md"
@@ -33,7 +34,7 @@ test_requirements = parse_requirements("requirements_test.txt")
 
 
 setup(
-    name="{{cookiecutter.package_name}}",
+    name="{{cookiecutter.package_slug}}",
     version="{{cookiecutter.version}}",
     description=description,
     long_description=long_description,
