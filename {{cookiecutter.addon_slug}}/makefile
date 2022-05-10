@@ -34,25 +34,25 @@ format: venv
 .PHONY: format
 
 lint: venv
-	$(VENV_PATH)/bin/flake8 --max-line-length 120 {{cookiecutter.addon_slug}}/
+	$(VENV_PATH)/bin/flake8 --max-line-length 120 {{cookiecutter.package_slug}}/
 	@set -e && $(VENV_PATH)/bin/black --exclude="setup\.py" --line-length=120 --check . || ( \
 		echo "================================"; \
 		echo "Bad formatting? Run: make format"; \
 		echo "================================"; \
 		false)
-	$(VENV_PATH)/bin/mypy {{cookiecutter.addon_slug}}/
+	$(VENV_PATH)/bin/mypy {{cookiecutter.package_slug}}/
 
 .PHONY: lint
 
 test: venv
-	$(VENV_PATH)/bin/pytest --cov-report html --cov-report term --cov={{cookiecutter.addon_slug}} tests/
+	$(VENV_PATH)/bin/pytest --cov-report html --cov-report term --cov={{cookiecutter.package_slug}} tests/
 .PHONY: test
 
 test_all: venv test lint
 .PHONY: test_all
 
 doc: venv
-	$(VENV_PATH)/bin/sphinx-apidoc -e -f -o docs/source/apiref {{cookiecutter.addon_slug}}
+	$(VENV_PATH)/bin/sphinx-apidoc -e -f -o docs/source/apiref {{cookiecutter.package_slug}}
 	$(VENV_PATH)/bin/sphinx-build -M clean docs/source docs/build
 	$(VENV_PATH)/bin/sphinx-build -M html docs/source docs/build
 .PHONY: doc
